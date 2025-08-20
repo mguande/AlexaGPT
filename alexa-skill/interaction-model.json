@@ -1,0 +1,66 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "alexagpt",
+      "intents": [
+        {
+          "name": "AskQuestion",
+          "slots": [
+            {
+              "name": "question",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "pergunte {question}",
+            "pergunte ao alexagpt {question}",
+            "pergunte para o alexagpt {question}",
+            "diga {question}",
+            "fale {question}",
+            "quero saber {question}",
+            "me diga {question}",
+            "responda {question}",
+            "o que é {question}",
+            "como {question}",
+            "quando {question}",
+            "onde {question}",
+            "quem {question}",
+            "por que {question}",
+            "qual {question}",
+            "quais {question}",
+            "explique {question}",
+            "conte sobre {question}",
+            "fale sobre {question}",
+            "me explique {question}",
+            "quero entender {question}",
+            "preciso saber {question}",
+            "me ajude com {question}",
+            "dúvida sobre {question}",
+            "informação sobre {question}"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        }
+      ],
+      "types": []
+    }
+  }
+}

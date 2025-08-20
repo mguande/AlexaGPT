@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "alexagpt-collection",
+		"name": "AlexaGPT API",
+		"description": "Coleção para testar a API AlexaGPT - Integração Alexa + IA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/health",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"health"
+					]
+				},
+				"description": "Verifica se a API está funcionando"
+			},
+			"response": []
+		},
+		{
+			"name": "Test Endpoint",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"question\": \"qual é a capital do Brasil?\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/test",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"test"
+					]
+				},
+				"description": "Testa o endpoint de perguntas da API"
+			},
+			"response": []
+		},
+		{
+			"name": "Alexa - LaunchRequest",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"version\": \"1.0\",\n  \"session\": {\n    \"sessionId\": \"test-session-123\",\n    \"application\": {\n      \"applicationId\": \"test-app-123\"\n    },\n    \"user\": {\n      \"userId\": \"test-user-123\"\n    }\n  },\n  \"request\": {\n    \"type\": \"LaunchRequest\",\n    \"requestId\": \"test-request-123\",\n    \"timestamp\": \"2023-01-01T00:00:00Z\"\n  }\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/alexa",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"alexa"
+					]
+				},
+				"description": "Simula quando o usuário diz 'Alexa, abra alexagpt'"
+			},
+			"response": []
+		},
+		{
+			"name": "Alexa - AskQuestion Intent",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"version\": \"1.0\",\n  \"session\": {\n    \"sessionId\": \"test-session-456\",\n    \"application\": {\n      \"applicationId\": \"test-app-456\"\n    },\n    \"user\": {\n      \"userId\": \"test-user-456\"\n    }\n  },\n  \"request\": {\n    \"type\": \"IntentRequest\",\n    \"requestId\": \"test-request-456\",\n    \"timestamp\": \"2023-01-01T00:00:00Z\",\n    \"intent\": {\n      \"name\": \"AskQuestion\",\n      \"slots\": {\n        \"question\": {\n          \"name\": \"question\",\n          \"value\": \"qual é a capital do Brasil\"\n        }\n      }\n    }\n  }\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/alexa",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"alexa"
+					]
+				},
+				"description": "Simula quando o usuário faz uma pergunta"
+			},
+			"response": []
+		},
+		{
+			"name": "Alexa - HelpIntent",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"version\": \"1.0\",\n  \"session\": {\n    \"sessionId\": \"test-session-789\",\n    \"application\": {\n      \"applicationId\": \"test-app-789\"\n    },\n    \"user\": {\n      \"userId\": \"test-user-789\"\n    }\n  },\n  \"request\": {\n    \"type\": \"IntentRequest\",\n    \"requestId\": \"test-request-789\",\n    \"timestamp\": \"2023-01-01T00:00:00Z\",\n    \"intent\": {\n      \"name\": \"AMAZON.HelpIntent\"\n    }\n  }\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/alexa",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"alexa"
+					]
+				},
+				"description": "Simula quando o usuário pede ajuda"
+			},
+			"response": []
+		},
+		{
+			"name": "Alexa - StopIntent",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"version\": \"1.0\",\n  \"session\": {\n    \"sessionId\": \"test-session-stop\",\n    \"application\": {\n      \"applicationId\": \"test-app-stop\"\n    },\n    \"user\": {\n      \"userId\": \"test-user-stop\"\n    }\n  },\n  \"request\": {\n    \"type\": \"IntentRequest\",\n    \"requestId\": \"test-request-stop\",\n    \"timestamp\": \"2023-01-01T00:00:00Z\",\n    \"intent\": {\n      \"name\": \"AMAZON.StopIntent\"\n    }\n  }\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/alexa",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"alexa"
+					]
+				},
+				"description": "Simula quando o usuário diz 'para' ou 'sair'"
+			},
+			"response": []
+		},
+		{
+			"name": "Test - Distância Terra-Sol",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"question\": \"qual é a distancia da terra ao sol\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/test",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"test"
+					]
+				},
+				"description": "Testa pergunta com resposta específica"
+			},
+			"response": []
+		},
+		{
+			"name": "Test - Receita de Bolo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"question\": \"como fazer bolo\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/test",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"test"
+					]
+				},
+				"description": "Testa pergunta sobre receita"
+			},
+			"response": []
+		},
+		{
+			"name": "Test - Quem criou a Alexa",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"question\": \"quem criou a alexa\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/test",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"test"
+					]
+				},
+				"description": "Testa pergunta sobre a Alexa"
+			},
+			"response": []
+		},
+		{
+			"name": "Test - Pergunta Genérica",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"question\": \"qual é a história do Brasil\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/test",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"test"
+					]
+				},
+				"description": "Testa pergunta que pode usar OpenAI ou fallback"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:5000/",
+			"type": "string"
+		}
+	]
+}

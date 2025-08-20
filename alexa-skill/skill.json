@@ -1,0 +1,42 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "https://2addef66f12b.ngrok-free.app/alexa"
+        },
+        "interfaces": []
+      }
+    },
+    "manifestVersion": "1.0",
+    "publishingInformation": {
+      "category": "KNOWLEDGE_AND_TRIVIA",
+      "distributionCountries": ["BR"],
+      "isAvailableWorldwide": false,
+      "locales": {
+        "pt-BR": {
+          "description": "AlexaGPT - Seu assistente de IA inteligente. Faça perguntas sobre qualquer assunto e receba respostas inteligentes.",
+          "examplePhrases": [
+            "Alexa, abra alexagpt",
+            "Alexa, pergunte ao alexagpt qual é a capital do Brasil",
+            "Alexa, pergunte ao alexagpt como fazer um bolo"
+          ],
+          "keywords": [
+            "IA",
+            "inteligência artificial",
+            "assistente",
+            "perguntas",
+            "respostas",
+            "conhecimento"
+          ],
+          "name": "AlexaGPT",
+          "summary": "Assistente de IA inteligente para responder suas perguntas"
+        }
+      },
+      "name": "AlexaGPT",
+      "summary": "Assistente de IA inteligente",
+      "testingInstructions": "Para testar a skill, diga 'Alexa, abra alexagpt' e depois faça uma pergunta como 'qual é a capital do Brasil'"
+    }
+  }
+}
+
