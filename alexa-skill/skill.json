@@ -15,11 +15,11 @@
       "isAvailableWorldwide": false,
       "locales": {
         "pt-BR": {
-          "description": "AlexaGPT - Seu assistente de IA inteligente. Faça perguntas sobre qualquer assunto e receba respostas inteligentes.",
+          "description": "Modo Inteligente - Seu assistente de IA inteligente. Diga 'Alexa, no modo inteligente responda' seguido da sua pergunta.",
           "examplePhrases": [
-            "Alexa, abra alexagpt",
-            "Alexa, pergunte ao alexagpt qual é a capital do Brasil",
-            "Alexa, pergunte ao alexagpt como fazer um bolo"
+            "Alexa, abra modo inteligente",
+            "Alexa, no modo inteligente responda qual é a capital do Brasil",
+            "Alexa, no modo inteligente responda como fazer um bolo"
           ],
           "keywords": [
             "IA",
@@ -27,15 +27,16 @@
             "assistente",
             "perguntas",
             "respostas",
-            "conhecimento"
+            "conhecimento",
+            "modo inteligente"
           ],
-          "name": "AlexaGPT",
+          "name": "Modo Inteligente",
           "summary": "Assistente de IA inteligente para responder suas perguntas"
         }
       },
-      "name": "AlexaGPT",
+      "name": "Modo Inteligente",
       "summary": "Assistente de IA inteligente",
-      "testingInstructions": "Para testar a skill, diga 'Alexa, abra alexagpt' e depois faça uma pergunta como 'qual é a capital do Brasil'"
+      "testingInstructions": "Para testar a skill, diga 'Alexa, abra modo inteligente' e depois 'Alexa, no modo inteligente responda' seguido da sua pergunta"
     }
   }
 }
